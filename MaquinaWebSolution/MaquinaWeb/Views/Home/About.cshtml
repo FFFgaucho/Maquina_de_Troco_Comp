@@ -1,0 +1,49 @@
+﻿@model MaquinaWeb.Models.Troco
+@{
+    ViewBag.Title = "About";
+
+}
+
+
+    <div class="col-md-8">
+        <h2>Geração de Troco na Máquina</h2>
+    </div>
+    <div class="col-md-4" style="margin-left: 38%; margin-top:3%; text-align:initial; background-image:url(../../Content/Image/maquina.jpg); background-repeat:no-repeat">
+        @*<img src="~/Content/Image/maquina.jpg" style="z-index:-1">*@
+        <input type="number" placeholder="Digite o valor do troco" style="margin-left:7%; margin-top:15%;text-align: center;"/>
+        <p style="color:transparent">Nada</p>
+        <p style="color:transparent">Nada</p>
+        <p style="color:transparent">Nada</p>
+        <p style="color:transparent">Nada</p>
+        <p style="color:transparent">Nada</p>
+        <p style="color:transparent">Nada</p>
+    </div>
+       
+    <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-2 moedaEQuant">
+            <img src="~/Content/Image/1cent.png" class="moeda" />
+            <span class="quantMoeda">@Model.Moedas[0].Valor</span>
+        </div>
+        <div class="col-md-2 moedaEQuant">
+            <img src="~/Content/Image/5cent.jpg" class="moeda" />
+            <span class="quantMoeda">@Model.Moedas[1].Valor</span>
+        </div>
+        <div class="col-md-2 moedaEQuant">
+            <img src="~/Content/Image/10cent.png" class="moeda" />
+            <span class="quantMoeda">@Model.Moedas[2].Valor</span>
+        </div>
+        <div class="col-md-2 moedaEQuant">
+            <img src="~/Content/Image/25cent.jpg" class="moeda" />
+            <span class="quantMoeda">@Model.Moedas[3].Valor</span>
+        </div>
+        <div class="col-md-2 moedaEQuant">
+            <img src="~/Content/Image/50cent.png" class="moeda" />
+            <span class="quantMoeda">@Model.Moedas[4].Valor</span>
+        </div>
+        <div class="col-md-2 moedaEQuant">
+            <img src="~/Content/Image/1real.jpg" class="moeda" />
+            <span class="quantMoeda">@Model.Moedas[5].Valor</span>
+        </div>
+
+    </div>
+     

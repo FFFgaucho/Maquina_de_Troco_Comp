@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaquinaWeb", "MaquinaWeb\MaquinaWeb.csproj", "{198F24FD-E0A4-42FF-A58D-B1663D6A9DEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{198F24FD-E0A4-42FF-A58D-B1663D6A9DEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198F24FD-E0A4-42FF-A58D-B1663D6A9DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198F24FD-E0A4-42FF-A58D-B1663D6A9DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198F24FD-E0A4-42FF-A58D-B1663D6A9DEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3C603C6-85D4-4908-B9D8-95B44D602524}
+	EndGlobalSection
+EndGlobal
