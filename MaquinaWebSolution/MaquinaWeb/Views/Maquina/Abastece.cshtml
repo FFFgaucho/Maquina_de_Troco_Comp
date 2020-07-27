@@ -1,0 +1,65 @@
+﻿@model MaquinaWeb.Models.Troco
+@{
+    ViewBag.Title = "Abastecer Máquina";
+
+}
+
+
+<div class="col-md-8">
+    <h2>Abastecer Máquina</h2>
+</div>
+<div class="col-md-12 title2">
+    <h2>Moedas na Máquina</h2>
+</div>
+
+<div class="col-md-10 col-md-offset-1">
+    @foreach (var moeda in Model.Moedas)
+    {     
+        <div class="col-md-2 moedaEQuant">
+            <img src="@Url.Content(moeda.srcImg)" class="moedaAbastece" />
+            <span class="quantMoeda">@moeda.Quantidade</span>
+        </div>
+    }
+
+</div>
+
+<div class="col-md-12 title2">
+    <h2>Quantidade a ser abastecida</h2>
+</div>
+
+<div id="Loading" style="display: none;">
+    <h2>Tá carregando</h2>
+</div>
+
+@using (Html.BeginForm("Adicionar", "Maquina", FormMethod.Post, new { id = "myForm" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="col-md-10 col-md-offset-1">
+        @for(int i=0;i<Model.NovasMoedas.Count;i++)
+        {
+            <div class="col-md-2 moedaEQuant">
+                <img src="@Url.Content(Model.NovasMoedas[i].srcImg)" class="moedaAbastece" />
+                @Html.EditorFor(troco => troco.NovasMoedas[i].Quantidade, new { htmlAttributes = new { @class = "quantNovaMoeda" } })
+                @Html.ValidationMessageFor(troco => troco.NovasMoedas[i].Quantidade, "", new { @class = "text-danger" })
+            </div>
+        }
+    </div>
+    <div class="col-md-8 col-md-offset-2 btnAbastecer">
+        <button class="btn-primary" type="submit">Abastecer Máquina</button>
+    </div>
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    //if ($('#myForm').length) {
+    //    console.log("Cheguei1");
+    //    $('#myForm').on('submit', function (e) {
+    //        e.preventDefault();
+    //        Loader.show();
+
+    //    });
+    //}
+
+
+</script>
+

@@ -16,7 +16,7 @@ namespace MaquinaWeb
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Maquina", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -1,4 +1,11 @@
-﻿
+﻿.tela {
+    margin-left: 39%;
+    margin-top: 3%;
+    text-align: initial;
+    background-image: url(../../Content/Image/maquina.jpg);
+    background-repeat: no-repeat;
+    height: 200px;
+}
 
 .moeda {
     width: 6em;
@@ -6,10 +13,44 @@
     margin-left: 15%;
 }
 .quantMoeda {
+    /*font-size: 20px;
+    color: black;
+    margin-left: 20%;*/
     font-size: 20px;
+    width: 80%;
+    text-align: center;
     color: black;
     margin-left: 20%;
 }
 .moedaEQuant {
     text-align: center;
+    display:none;
+}
+.inputTroco {
+    margin-left: -7%;
+    /*margin-top: 25%;*/
+    text-align: center;
+}
+.labelTroco {
+    margin-top: 20%;
+}
+.valorInvalido{
+    display:none;
+    color:red;
+    font-size:20px;
+}
+.btnCalcular{
+    margin-top:1%;
+    text-align:center;
+}
+.modalBody {
+    background-color: green;
+    text-align: center;
+    font-size: 40px;
+}
+#retornoModal {
+    margin-top: 10%;
+}
+.divMoedas{
+    margin-top:5%;
 }

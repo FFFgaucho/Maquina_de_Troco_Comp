@@ -1,0 +1,20 @@
+﻿.title2{
+    text-align:center;
+}
+
+.quantNovaMoeda {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+.moedaAbastece {
+    width: 80%;
+    height: 6em;
+    margin-top: 2%;
+    margin-left: 10%;
+    
+}
+.btnAbastecer {
+    text-align: center;
+    margin-top: 5%;
+}
