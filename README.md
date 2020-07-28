@@ -8,9 +8,7 @@ Requisitos Técnicos
 
 2.         Deve ter algum tipo de interface (web, windows forms, wpf, console, etc)
 
-3.         Repositório externo git, o caminho do repositório deve ser fornecido por email para , thobias@compuletra.com.br.
-
-4.         Demais Requisitos Técnicos estão livres para sua escolha.
+3.         Demais Requisitos Técnicos estão livres para sua escolha.
 
 Requisitos de Negócio
 
