@@ -1,12 +1,12 @@
 ﻿@model MaquinaWeb.Models.Troco
 @{
-    ViewBag.Title = "Abastecer Máquina";
+    ViewBag.Title = "Sangria";
 
 }
 
 
 <div class="col-md-8">
-    <h2>Abastecer Máquina</h2>
+    <h2>Retirar Moedas</h2>
 </div>
 <div class="col-md-12 title2">
     <h2>Moedas na Máquina</h2>
@@ -24,14 +24,14 @@
 </div>
 
 <div class="col-md-12 title2">
-    <h2>Quantidade a ser abastecida</h2>
+    <h2>Quantidade a ser retirada</h2>
 </div>
 
 <div id="Loading" style="display: none;">
     <h2>Tá carregando</h2>
 </div>
 
-@using (Html.BeginForm("Adicionar", "Maquina", FormMethod.Post, new { id = "myForm" }))
+@using (Html.BeginForm("Retirar", "Maquina", FormMethod.Post, new { id = "myForm" }))
 {
     @Html.AntiForgeryToken()
     <div class="col-md-10 col-md-offset-1">
@@ -39,12 +39,12 @@
         {
             <div class="col-md-2 moedaEQuant" id="@Url.Content(Model.NovasMoedas[i].Valor.ToString())">
                 <img src="@Url.Content(Model.NovasMoedas[i].srcImg)" class="moedaAbastece" />
-                @Html.EditorFor(troco => troco.NovasMoedas[i].Quantidade, new { htmlAttributes = new { @class = "quantNovaMoeda " + Url.Content(Model.NovasMoedas[i].Valor.ToString()) } })
+                @Html.EditorFor(troco => troco.NovasMoedas[i].Quantidade, new { htmlAttributes = new { @class = "quantNovaMoeda " + Model.NovasMoedas[i].Valor } })
             </div>
         }
     </div>
     <div class="col-md-8 col-md-offset-2 btnAbastecer">
-        <button class="btn btn-primary" type="submit">Abastecer Máquina</button>
+        <button class="btn btn-primary" type="submit">Retirar Moedas</button>
     </div>
 }
 
@@ -64,12 +64,10 @@
         </div>
     </div>
 </div>
-
 <div class="modal fade" id="retornoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modalBody">
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
@@ -77,16 +75,16 @@
         </div>
     </div>
 </div>
-
 @Scripts.Render("~/bundles/jquery")
+
 <script type="text/javascript">
 
     if ($('#myForm').length) {
         console.log("Cheguei1");
         $('.moedaEQuant').css("display", "block");
         $('#myForm').on('submit', function (e) {
-            e.preventDefault();
             let trava = 0;
+            e.preventDefault();
             let valoresNovos = new Array();
             valoresNovos.push($('.1').val());
             valoresNovos.push($('.5').val());
@@ -94,21 +92,32 @@
             valoresNovos.push($('.25').val());
             valoresNovos.push($('.50').val());
             valoresNovos.push($('.100').val());
+            console.log("Valores = " + valoresNovos);
+
+            let valoresAntigos = new Array();
+            valoresAntigos.push(Number($('#1').text()));
+            valoresAntigos.push(Number($('#5').text()));
+            valoresAntigos.push(Number($('#10').text()));
+            valoresAntigos.push(Number($('#25').text()));
+            valoresAntigos.push(Number($('#50').text()));
+            valoresAntigos.push(Number($('#100').text()));
+            console.log("Valores = " + valoresAntigos);
             var mensagem = "";
             let soma = 0;
-            console.log("Valores = " + valoresNovos);
+            //Valor menor que 0 ou maior que o número de moedas disponíveis
             for (let i = 0; i < valoresNovos.length; i++) {
-                if (valoresNovos[i] < 0) {
+                console.log(valoresNovos[i] + " > " + valoresAntigos[i]);
+                if (valoresNovos[i] > valoresAntigos[i] || valoresNovos[i] < 0) {
                     mensagem = "Quantidade Inválida";
+                    console.log("Entrei");
                     trava = 1;
                 }
                 soma += valoresNovos[i];
             }
             if (soma == 0 && trava != 1) {
-                mensagem = "Pelo menos a quantidade de uma moeda é necessária para o abastecimento";
+                mensagem = "Pelo menos a quantidade de uma moeda é necessária para a retirada";
                 trava = 1;
             }
-            console.log("tr=" + trava);
             if (trava == 0) {
                 $('#loadModal').modal('show');
                 $.ajax({

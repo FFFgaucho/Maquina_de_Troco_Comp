@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace MaquinaWeb.Models
 {
+    [Serializable]
     public class MaquinaDeTroco
     {
         private static MaquinaDeTroco maquinaDeTroco { get; set; }
@@ -43,7 +47,7 @@ namespace MaquinaWeb.Models
                 maquinaDeTroco.Total = 0;
                 foreach(var moeda in maquinaDeTroco.Moedas)
                 {
-                    moeda.Quantidade = 200;
+                    moeda.Quantidade = 0;
                 }
                 maquinaDeTroco.atualizaTotal();
 

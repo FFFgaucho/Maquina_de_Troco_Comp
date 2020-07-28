@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<MaquinaDeTroco xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Moedas>
+    <Moeda>
+      <Quantidade>0</Quantidade>
+      <Valor>1</Valor>
+      <srcImg>~/Content/Image/1cent.png</srcImg>
+    </Moeda>
+    <Moeda>
+      <Quantidade>0</Quantidade>
+      <Valor>5</Valor>
+      <srcImg>~/Content/Image/5cent.jpg</srcImg>
+    </Moeda>
+    <Moeda>
+      <Quantidade>126</Quantidade>
+      <Valor>10</Valor>
+      <srcImg>~/Content/Image/10cent.png</srcImg>
+    </Moeda>
+    <Moeda>
+      <Quantidade>0</Quantidade>
+      <Valor>25</Valor>
+      <srcImg>~/Content/Image/25cent.jpg</srcImg>
+    </Moeda>
+    <Moeda>
+      <Quantidade>0</Quantidade>
+      <Valor>50</Valor>
+      <srcImg>~/Content/Image/50cent.png</srcImg>
+    </Moeda>
+    <Moeda>
+      <Quantidade>0</Quantidade>
+      <Valor>100</Valor>
+      <srcImg>~/Content/Image/1real.jpg</srcImg>
+    </Moeda>
+  </Moedas>
+  <Total>1260</Total>
+</MaquinaDeTroco>

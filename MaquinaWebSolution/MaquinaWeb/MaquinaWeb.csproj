@@ -142,11 +142,14 @@
     <Content Include="Content\Image\25cent.jpg" />
     <Content Include="Content\Image\50cent.png" />
     <Content Include="Content\Image\5cent.jpg" />
+    <Content Include="Content\Image\check.gif" />
+    <Content Include="Content\Image\load.gif" />
     <Content Include="Content\Image\maquina.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Persistencia.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -177,6 +180,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Maquina\Index.cshtml" />
     <Content Include="Views\Maquina\Abastece.cshtml" />
+    <Content Include="Views\Maquina\Sangria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
